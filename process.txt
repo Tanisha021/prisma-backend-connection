@@ -1,0 +1,63 @@
+npm init-y
+npm i bcryptjs validator jsonwebtoken cookie-parser dotenv express
+
+npm i -D prisma(-D is for dev dependency)
+
+npx prisma init(npx is node package executor)
+
+1)set mongodb connection in .env
+2)make models in schema.prisma
+
+npm install @prisma/client
+
+npx prisma generate
+//The generate command generates assets like Prisma Client based on the generator and data model blocks defined in your 
+prisma/schema.prisma file.
+
+3)touch prisma/index.js
+prisma/index.js
+
+u dont have to worry about how mongodb or postgress or mysql is connected u have to only worry about prisma
+prisma will worry about connection,how data is gonna go to database , about queries in easier way
+
+4)make index.js
+npm run dev
+
+//COOKIE-parser
+
+5)helpers/getJwtTokens.js
+for getting tokens
+
+6)utils/cookieToken.js
+for putting that token in cookie
+
+7)controllers/userControllers.js
+  controllers/postControllers.js
+
+8)routes/userRoutes.js 
+
+9)made signup,login,logout functions in userControllers
+
+10)call router in index.js
+
+11)made middleware/isLoggedIn.js
+
+12)try npx prisma studio (give brief overview of what u are doin)
+
+13)similarly make of postUsers
+
+-----------------------(NOTES)---------------------------
+1)difference btw express.json() && express.urlencoded
+Because they are used on the req side of a server call, you only need them for POST and PUT requests, or any outgoing request that 
+carries data. They aren't needed for GET or DELETE requests.
+
+.json()
+Express.json() expects request data to be sent in JSON format, which often resembles a simple JS object:
+{"Name": "Pikachu", "Type": "Banana", "Number In Stable": 12}
+
+.urlencoded()
+Express.urlencoded() expects request data to be sent encoded in the URL, usually in strings or arrays:
+.../Name=Pikachu&Type=Banana&Number+In+Stable=12
+
+2)
+
